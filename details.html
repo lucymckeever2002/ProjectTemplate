@@ -62,6 +62,64 @@
               </div>
             </div>
 
+            <div class="form-group">
+              <label for="ageInput" class="control-label col-md-2">Age</label>
+                <div class="col-md-2">
+                  <input id="txtAge" type="number" name="ageInput" class="form-control personalDetails" placeholder="Age"/>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="genderInput" class="control-label col-md-2">Gender</label>
+                <div class="col-md-2">
+                  <input id="genderMale" type="radio"  name="genderRadio" class="personalDetails" value="m"/>Male  
+                  <input id="genderFemale" type="radio"  name="genderRadio" class="personalDetails" value="f"/>Female
+                </div>
+              </div>
+
+             <div class="form-group">
+                <label for="TownInput" class="control-label col-md-2">Town</label>
+                <div class="col-md-4">
+                  <input id="txtTown" type="text"  name="TownInput" class= "personalDetails" placeholder="Town/City"/> 
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for= "EmailInput" class="control-label col-md-2">Email</label>
+                <div class="col-md-4">
+                  <input id="txtEmail" type="email" name="EmailInput" class="personalDetails" placeholder="Email Address"/>
+                </div>
+              </div>
+
+              <div class= "form-group">
+                <label for="txtYrsNoClaims" class="control-label col-md-2">No claims Bonus (in years)</label>
+                <div class="col-md-2">
+                  <select id= "txtYrsNoClaims"  name="NoYearsNoClaims0" class="personalDetails"/>
+                    <option value= "">Select</option>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5+</option>
+
+                  </select>
+                
+                </div>
+              </div>
+
+
+
+
+
+
+
+            
+          
+
+
+
+
             <!-- The code for the remainder of the personal fields will be added here -->
 
             <div class="form-group">
@@ -76,13 +134,145 @@
 
       <!-- WRAP CAR DETAILS FORM IN CHILD PANEL -->
       <div id="dvCarDetails" class="dvCarDetails">
+        <div id="dvCarDetailsAlert" class="alert alert-warning carDetailsAlert">Error Message</div>
         <!-- Code for the car details section to be added here -->
-      </div>
+        <h1>Please enter your car details</h1>
+         <p>In order to provide you with a quote, we need a few details. Please complete the form below. Thanks.</p>
 
+
+      <div class= "row">
+        <form class= "form-horizontal">
+
+
+          <div class="form-group">
+            <label for="txtcarManufacturer" class="control-label col-md-2">Manufacturer</label>
+            <div class="col-md-4">
+              <select id= "txtcarManufacturer" class= "form-control">
+                <option value= "">Select</option>
+                <option value= "1">Audi</option>
+                <option value= "2">BMW</option>
+                <option value= "3">Citreon</option>
+                <option value= "4">Mini</option>
+                <option value= "5">Toyota</option>
+                <option value= "6">VW</option>
+                <option value= "7">Mazda</option>
+                </select>
+
+
+            </div>
+            
+
+        </div>
+
+
+        <div class= "form-group">
+          <label for="txtModel" class= "control-label col-md-2">Model</label>
+          <div class="col-md-4">
+            <input id="txtModel" type="text" name="modelInput" class="form-control carDetails" placeholder="Model"/>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="txtcarAge" class="control-label col-md-2">Car Age</label>
+          <div class="col-md-2">
+            <input id="txtcarAge" type="number" name="carAgeInput" class="form-control carDetails" placeholder="carAge"/>
+          </div>
+        </div>
+
+        <div class= "form-group">
+          <label for ="txtEngineSize" class= "control-label col-md-2" >Model</label>
+          <div class= "col-md-4">
+            <input id="txtEngineSize" type="text" name="carEngineInput" class="form-control carDetails" placeholder="engineSize"/>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="carStorage" class= "control-label col-md-2">Storage</label>
+          <div class="col-md-4">
+            <select id="carStorage" class="form-control">
+              <option value="">Select</option>
+              <option value="1">Garage</option>
+              <option value="2">Driveway</option>
+              <option value="3">Cul-de-sac</option>
+              <option value="4">Public Road</option>
+              </select>
+
+            </div>
+
+          </div>
+
+          <div class="form-group">
+            <label for ="txtEstimatedValue" class="control-label col-md-2">Estimated Value </label>
+            <div class="col-md-4">
+              <input id="txtEstimatedValue" type="number" name="Estimated value" class="form-control carDetails" placeholder="Estimated Value (£)"/>
+            </div>
+          </div>
+
+          
+          
+          <div class="form-group">
+            <div class="col-md-4">
+            <input id="btnNext" value="Next" class="btn btn-default btn-sm btn-success" onclick="getQuote()"/>
+          </div>
+        </div>
+
+
+            <div class="form-group">
+              <div class="col-md-4">
+                <input id="btnBack" value="Back" class="btn btn-default btn-sm btn-success" onclick="showPersonalDetails()" />
+              </div>
+            </div>
+
+    </div>
+  </div>
+
+
+
+
+
+      </form>
+      
+    </div>
+  </div>
 
       <!-- WRAP Quote DETAILS FORM IN CHILD PANEL -->
       <div id="dvQuoteDetails" class="dvQuoteDetails">
         <!-- The display fields for the quote will be added here -->
+        <h1>Your Quote </h1>
+        <p>Based on the information you have provided us, here is your calculated quote. Thanks.</p>
+
+        <div class="row">
+          <form class="form-horizontal">
+
+            <div class="form-group">
+              <label for="txtquotePrice" class="control-label col-md-2"> Quote: £</label>
+              <div class="col-md-4">
+                <label id="txtQuote" class="control-label col-md-2"/>
+
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="txtquotePrice" class="control-label col-md-2"> Car JSON</label>
+              <div class="col-md-8">
+                <label id="carJSON" class="control-label col-md-2"/>
+
+              </div>
+            </div>
+
+            
+
+                <div class="form-group">
+              <div class="col-md-4">
+                <input id="btnQuoteBack" value="Back" class="btn btn-default btn-sm btn-success" onclick="showCarDetails()" />
+  
+
+              </div>
+            </div>
+          </form>
+        </div>
+
+
       </div>
 
 <!--#######################################################################################################################################################
